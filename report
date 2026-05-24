@@ -1,0 +1,317 @@
+# Technology Sector Equity Analysis and Trading Insights
+
+## Submitted by: Tanishka Sharma
+
+
+# 1. Introduction
+
+The purpose of this project is to analyze stock market data from selected technology companies and identify useful trends, patterns, and potential trading opportunities using historical financial data.
+
+The technology sector was selected because technology companies are among the most actively traded and closely followed companies in the market. Their stock prices are often influenced by innovation, investor sentiment, earnings reports, and overall market conditions, making them interesting for financial analysis.
+
+The following companies were selected for the analysis:
+
+* Apple (AAPL)
+* Microsoft (MSFT)
+* Nvidia (NVDA)
+* Amazon (AMZN)
+
+These companies were chosen because they are large, well-known technology firms with different levels of growth and volatility.
+
+The analysis mainly focuses on:
+
+* Comparing stock price trends
+* Measuring volatility and risk
+* Observing relationships between stocks
+* Identifying a simple trading opportunity using momentum analysis
+
+The project was completed using Python and publicly available market data.
+
+
+# 2. Data Collection
+
+Historical stock market data was collected using Yahoo Finance through Python's `yfinance` library.
+
+Data Source:
+
+* Yahoo Finance
+
+Time Period:
+
+* January 2025 to January 2026
+
+Frequency:
+
+* Daily stock market data
+
+The following variables were collected:
+
+| Variable | Description                    |
+| -------- | ------------------------------ |
+| Open     | Opening stock price            |
+| Close    | Closing stock price            |
+| High     | Highest stock price of the day |
+| Low      | Lowest stock price of the day  |
+| Volume   | Total shares traded            |
+
+Python libraries used during the project:
+
+* yfinance
+* pandas
+* matplotlib
+* numpy
+
+The stock data was downloaded automatically using Python scripts, which ensured consistent and reproducible data collection.
+
+
+# 3. Data Preparation
+
+The downloaded data was cleaned and prepared before analysis.
+
+The following preprocessing steps were performed:
+
+1. Extraction of closing prices from the complete dataset.
+2. Calculation of daily percentage returns.
+3. Volatility calculation using standard deviation of returns.
+4. Moving average calculation for momentum analysis.
+5. Correlation analysis among selected stocks.
+
+Daily returns were calculated using percentage changes in closing prices.
+
+Annualized volatility was calculated using the following formula:
+
+genui{"math_block_widget_always_prefetch_v2":{"content":"\sigma_{annual}=\sigma_{daily}\times\sqrt{252}"}}
+
+Where:
+
+* (\sigma_{daily}) represents daily return standard deviation
+* 252 represents approximate annual trading days
+
+The dataset was processed using pandas DataFrames for easier analysis and visualization.
+
+
+# 4. Key Patterns and Insights
+
+## 4.1 Stock Price Trends
+
+The stock price trend analysis showed clear differences in growth patterns and price movements among the selected companies.
+
+Nvidia demonstrated the most aggressive upward movement and price fluctuation during the analysis period, while Microsoft showed relatively smoother and more stable price behavior.
+
+Apple and Amazon displayed moderate volatility and relatively consistent growth trends.
+
+### Chart 1: Technology Stock Price Trends
+
+![alt text](image.png)
+
+---
+
+## 4.2 Volatility Analysis
+
+Volatility measures how aggressively stock prices fluctuate over time and is an important indicator of investment risk.
+
+The calculated annualized volatility values were:
+
+| Stock            | Annualized Volatility |
+| ---------------- | --------------------- |
+| Apple (AAPL)     | 0.324641              |
+| Amazon (AMZN)    | 0.344892              |
+| Microsoft (MSFT) | 0.242987              |
+| Nvidia (NVDA)    | 0.496366              |
+
+The results indicate that Nvidia had the highest volatility among all selected stocks.
+
+This suggests:
+
+* Higher market risk
+* Strong speculative trading behavior
+* Larger price swings
+* Greater sensitivity to market sentiment
+
+Microsoft demonstrated the lowest volatility, suggesting comparatively more stable market behavior and lower risk exposure.
+
+### Chart 2: Volatility Comparison
+
+![alt text](image-1.png)
+
+
+
+## 4.3 Correlation Behavior
+
+The selected technology stocks showed positive correlation behavior, meaning that many of the stocks moved in similar directions during major market events.
+
+This indicates that sector-wide sentiment strongly influences technology companies.
+
+An important observation is that diversification benefits may reduce during periods of market uncertainty because highly correlated stocks often decline simultaneously.
+
+
+
+## 4.4 Momentum Observation Using Moving Averages
+
+A momentum analysis was performed using moving average crossovers.
+
+The following moving averages were used:
+
+* 20-Day Moving Average
+* 50-Day Moving Average
+
+
+
+
+The moving average crossover analysis identified periods where short-term momentum exceeded long-term trends.
+
+When the 20-day moving average crossed above the 50-day moving average, bullish momentum was observed.
+
+### Chart 3: Moving Average Crossover Strategy
+
+![alt text](image-2.png)
+
+
+
+# 5. Trading Idea
+
+## Momentum-Based Moving Average Strategy
+
+A simple momentum trading strategy was proposed using moving average crossovers.
+
+Strategy Logic:
+
+* Buy Signal:
+
+  * Generated when the 20-day moving average rises above the 50-day moving average.
+
+* Sell Signal:
+
+  * Generated when the 20-day moving average falls below the 50-day moving average.
+
+This strategy is based on the assumption that strong upward momentum may continue in the short term.
+
+The strategy attempts to:
+
+* Capture upward market trends
+* Reduce exposure during downward momentum
+* Improve trading discipline using rule-based decisions
+
+The strategy is simple, interpretable, and widely used in financial markets.
+
+
+
+# 6. Backtesting Approach
+
+The proposed strategy can be evaluated using historical market data through backtesting.
+
+Backtesting involves applying the trading rules to historical stock price data to measure how the strategy would have performed in the past.
+
+The following evaluation metrics can be used:
+
+| Metric           | Purpose                            |
+| ---------------- | ---------------------------------- |
+| Total Return     | Measures profitability             |
+| Win Rate         | Percentage of successful trades    |
+| Sharpe Ratio     | Measures risk-adjusted return      |
+| Maximum Drawdown | Measures largest portfolio decline |
+| Volatility       | Measures strategy risk             |
+
+
+The strategy performance should also be compared against a simple buy-and-hold approach to determine whether the trading rules add value.
+
+
+
+# 7. Risks and Limitations
+
+Although the proposed strategy may provide useful insights, several limitations and risks exist.
+
+## 7.1 Historical Bias
+
+Past market behavior may not repeat in future market conditions.
+
+Strategies that perform well historically may fail under changing economic conditions.
+
+
+
+## 7.2 False Signals
+
+Moving average strategies may generate incorrect signals during sideways or highly volatile markets.
+
+This can lead to unnecessary trades and reduced profitability.
+
+
+
+## 7.3 Market Volatility
+
+Unexpected macroeconomic events, geopolitical risks, and earnings announcements can significantly affect stock prices.
+
+These events may reduce the reliability of technical indicators.
+
+
+
+## 7.4 Transaction Costs
+
+Frequent trading may increase:
+
+* Brokerage costs
+* Slippage
+* Tax implications
+
+These costs may reduce actual strategy profitability.
+
+
+
+## 7.5 Overfitting
+
+Strategies optimized too heavily using historical data may become overly specialized and fail in live trading environments.
+
+
+
+# 8. Conclusion
+
+This project explored historical stock market behavior among selected technology companies using Python-based financial analysis.
+
+Several important observations were identified during the analysis:
+
+* Nvidia showed the highest volatility and largest price fluctuations.
+* Microsoft displayed relatively stable price behavior.
+* Technology stocks generally moved in similar directions during major market movements.
+* Moving average analysis helped identify momentum-based trading opportunities.
+
+A simple moving average crossover strategy was proposed as a practical trading idea. Although the strategy is straightforward, it demonstrates how financial data can be used to support trading and investment decisions.
+
+The project also highlighted the importance of:
+
+* Risk management
+* Understanding volatility
+* Evaluating historical performance carefully
+* Recognizing the limitations of backtesting
+
+Overall, the project provided practical experience in collecting, analyzing, and interpreting equity market data using Python and basic financial analysis techniques.
+
+
+
+# 9. AI Usage Statement
+
+AI tools were used to assist with brainstorming project structure, refining explanations, debugging Python code, and validating financial terminology. Data interpretation, analysis decisions, and final report editing were independently reviewed and modified by me.
+
+
+
+# Appendix
+
+## Python Libraries Used
+
+```python
+import yfinance as yf
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+## Dataset Source
+
+Yahoo Finance historical stock market data.
+
+## Files Generated
+
+* stock_price_trends.png
+* volatility_comparison.png
+* moving_average_strategy.png
+* closing_prices.csv
+* daily_returns.csv
